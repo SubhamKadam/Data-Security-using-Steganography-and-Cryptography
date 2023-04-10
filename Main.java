@@ -1,13 +1,4 @@
-package Stegno_Java;
 import java.util.Scanner;
-
-class Embedder {
-
-}
-
-class Extractor {
-
-}
 
 public class Main {
     public static void main(String[] args){
