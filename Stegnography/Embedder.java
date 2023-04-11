@@ -1,5 +1,5 @@
 package Stegnography;
 
-public class Embbeder {
+public class Embedder {
     
 }
