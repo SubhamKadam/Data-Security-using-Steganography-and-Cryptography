@@ -13,7 +13,7 @@ public class Main {
             if(choice == 1){
                 System.out.println("Enter vessel image path");
                 String vesselImage = input.nextLine();
-                System.out.println("Enter file to embed")
+                System.out.println("Enter file to embed");
                 String document = input.nextLine();
                  
             }
