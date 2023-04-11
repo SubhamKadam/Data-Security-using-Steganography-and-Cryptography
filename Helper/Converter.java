@@ -1,11 +1,12 @@
 package Helper;
 
 import java.io.BufferedReader;
+import Data.DataWarehouse;
 
 public class Converter{
 
-    public static void convertToString(TakeInput inputObj){
-        BufferedReader reader = inputObj.reader;
+    public static void convertToString(DataWarehouse dataObj){
+        BufferedReader reader = dataObj.getReader();
         StringBuilder stringBuilder = new StringBuilder();
         String line = null;
         String ls = System.getProperty("line.separator");
@@ -20,6 +21,6 @@ public class Converter{
             System.out.println("Issue with readline");
         }
         
-        inputObj.plainText = stringBuilder.toString();        
+        dataObj.setPlainText(stringBuilder.toString());        
     }
 }
