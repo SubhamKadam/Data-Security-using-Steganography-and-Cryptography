@@ -1,13 +1,11 @@
 package Cryptography;
-import Data.DataWarehouse;
 
 public class Encrypter {
     
     final static int key = 3;
-    public static void ceaserCipher(DataWarehouse dataObj) {
+    public static String ceaserCipher(String input) {     
         StringBuilder cipherText = new StringBuilder();
-        // System.out.println(inputObj.getPlainText());
-        for (char c : dataObj.getPlainText().toCharArray()) {
+        for (char c : input.toCharArray()) {
             if (Character.isLetter(c)) {
                 char encryptedChar = (char)((( c - 'a' + key ) % 26) + 'a');
                 cipherText.append(encryptedChar);
@@ -16,6 +14,6 @@ public class Encrypter {
                 cipherText.append(c);
             }
         }
-        dataObj.setCipherText(cipherText.toString());
+        return cipherText.toString();
     }
 }

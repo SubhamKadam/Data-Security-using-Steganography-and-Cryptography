@@ -1,32 +1,37 @@
-import java.util.Scanner;
-import Cryptography.Encrypter;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+import Cryptography.*;
 import Helper.*;
-import Stegnography.Extractor;
+import Stegnography.*;
 import Data.DataWarehouse;
 
 public class Main {
     public static void main(String[] args){
+        try {
+            
+            BufferedImage normalImage = ImageIO.read(new File("C:/Users/MAXRAGE/Downloads/Testing/input.png"));;
+            BufferedImage resultImage = Embedder.embedd(normalImage,"successfully abcd","17status");;
+            // try {
+                String extractedText = Extractor.extract(resultImage);
+            // } catch (Exception e) {
+            //     System.out.println("Failed 3");
+            //     return;
+            // }
+            // String extractedText = "";
+            try {
+                System.out.println(extractedText);
+            } catch (Exception e) {
+                System.out.println("Failed 4");
+                return;
+            }
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+       
         
-        // DataWarehouse dataObj = new DataWarehouse();
-        // InputHandler.takeInput(dataObj);
-        // Converter.convertToString(dataObj);
-        // Encrypter.ceaserCipher(dataObj);
-        
-        
-        //Embedder work - Ajay will implement
-
-        //Defining temp function for dealing with extractor(not good implementation)
-        chotaMain();
     }
-    public static void chotaMain() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter embedded image path: ");
-        String vesselImagePath = scanner.nextLine();
-        System.out.print("Enter target folder path: ");
-        String targetFolder = scanner.nextLine();
-        scanner.close();
-        Extractor extractor = new Extractor(vesselImagePath, targetFolder);
-        extractor.extract();
-        // Decrypter.ceaserCipherDecrypt();
-    } 
 }
