@@ -1,21 +1,24 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import javax.imageio.ImageIO;
 
-import Cryptography.*;
-import Helper.*;
+import Helper.Validator;
 import Stegnography.*;
-import Data.DataWarehouse;
 
 public class Main {
     public static void main(String[] args){
         try {
+            String inputText = "successfully abcd";
             
-            BufferedImage normalImage = ImageIO.read(new File("C:/Users/MAXRAGE/Downloads/Testing/input.png"));;
-            BufferedImage resultImage = Embedder.embedd(normalImage,"successfully abcd","17status");;
+            BufferedImage normalImage = ImageIO.read(new File("C:/Users/MAXRAGE/Downloads/Testing/input.png"));
+            boolean embedding_possible = Validator.validate(normalImage, inputText);
+            if (!embedding_possible) {
+                System.out.println("data to large for the image");
+            }
+            BufferedImage resultImage = Embedder.embedd(normalImage, inputText,"17status");
+
             // try {
-                String extractedText = Extractor.extract(resultImage);
+            String extractedText = Extractor.extract(resultImage);
             // } catch (Exception e) {
             //     System.out.println("Failed 3");
             //     return;

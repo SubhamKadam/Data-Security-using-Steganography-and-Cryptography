@@ -9,18 +9,11 @@ public class DataWarehouse {
     private String plainText;
     private String cipherText;
     private BufferedReader reader;
-    private int headerLength;
     private String encryptionTechnique;
-    private int noOfPixelNeeded;
     private String headerText;
     private String outputPath;
 
-    public int getNoOfPixelNeeded() {
-        return noOfPixelNeeded;
-    }
-    public void setNoOfPixelNeeded(int noOfPixelNeeded) {
-        this.noOfPixelNeeded = noOfPixelNeeded;
-    }
+
     public String getOutputPath() {
         return outputPath;
     }
@@ -38,10 +31,6 @@ public class DataWarehouse {
     }
     public void setEncryptionTechnique(String encryptionTechnique) {
         this.encryptionTechnique = encryptionTechnique;
-    }
-    public int getHeaderLength() {
-        this.headerLength = getHeaderText().length();
-        return getHeaderText().length();
     }
     public String getDocumentPath() {
         return documentPath;
